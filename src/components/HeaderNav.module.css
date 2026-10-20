@@ -1,0 +1,108 @@
+.headerNav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 960px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: rgba(30, 8, 23, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 180, 200, 0.22);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 67, 113, 0.2);
+  transition: all 0.3s ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.brandFlower {
+  color: var(--primary-rose);
+  animation: sparkleSpin 8s linear infinite;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.navButton:hover {
+  background: rgba(255, 67, 113, 0.25);
+  border-color: rgba(255, 105, 135, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(255, 67, 113, 0.3);
+}
+
+.navButton:active {
+  transform: translateY(0);
+}
+
+.soundwave {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 14px;
+}
+
+.bar {
+  width: 2.5px;
+  background-color: var(--accent-gold);
+  border-radius: 2px;
+  height: 4px;
+}
+
+.barPlaying:nth-child(1) {
+  animation: waveBar 1.2s ease-in-out infinite 0.1s;
+}
+.barPlaying:nth-child(2) {
+  animation: waveBar 1.2s ease-in-out infinite 0.3s;
+}
+.barPlaying:nth-child(3) {
+  animation: waveBar 1.2s ease-in-out infinite 0.5s;
+}
+
+@media (max-width: 640px) {
+  .headerNav {
+    padding: 8px 12px;
+    top: 10px;
+  }
+  .brandText {
+    display: none;
+  }
+  .btnText {
+    display: none;
+  }
+  .navButton {
+    padding: 8px 10px;
+  }
+}

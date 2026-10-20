@@ -1,0 +1,195 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(10, 2, 8, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(150deg, #2e0d23, #1c0515);
+  border: 1px solid rgba(255, 180, 200, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 67, 113, 0.3);
+  padding: 28px 24px;
+  color: #fff;
+  position: relative;
+  animation: scaleUpModal 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUpModal {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd2dc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 67, 113, 0.4);
+  color: #fff;
+}
+
+.modalHeader {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.modalTitle {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-playfair);
+  color: #fff;
+}
+
+.modalDesc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.inputGroup {
+  margin-bottom: 16px;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffebef;
+  margin-bottom: 8px;
+}
+
+.textInput {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 180, 200, 0.3);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.textInput:focus {
+  border-color: var(--primary-rose);
+  box-shadow: 0 0 15px rgba(255, 67, 113, 0.4);
+}
+
+.quickChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.chip {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  color: #ffebef;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background: rgba(255, 67, 113, 0.3);
+  border-color: rgba(255, 105, 135, 0.5);
+  color: #fff;
+}
+
+.chipActive {
+  background: linear-gradient(135deg, #ff4371, #c0184c);
+  border-color: #ff7597;
+  color: #fff;
+}
+
+.previewBox {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px dashed rgba(246, 200, 106, 0.4);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  color: var(--accent-gold);
+}
+
+.previewText {
+  color: #fff;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.copyBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff4371, #d6144b);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(255, 67, 113, 0.4);
+}
+
+.copyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 67, 113, 0.6);
+}
+
+.copied {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  box-shadow: 0 6px 18px rgba(46, 204, 113, 0.4);
+}

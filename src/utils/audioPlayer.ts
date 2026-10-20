@@ -1,15 +1,15 @@
 "use client";
 
 // Romantic Audio Manager
-// Plays the classical, romantic Canon in D masterpiece starting from second 6
-// Smooth volume fade-in, looping from 6s, and play/pause controls
+// Plays the classical, romantic Canon in D masterpiece starting from second 12
+// Smooth volume fade-in, looping from 12s, and play/pause controls
 
 class RomanticAudioManager {
   private audio: HTMLAudioElement | null = null;
   private isPlaying: boolean = false;
-  private targetVolume: number = 0.55;
+  private targetVolume: number = 1;
   private fadeInterval: NodeJS.Timeout | null = null;
-  private startTimeSeconds: number = 6;
+  private startTimeSeconds: number = 25;
 
   constructor() {
     if (typeof window !== "undefined") {
@@ -20,22 +20,22 @@ class RomanticAudioManager {
   private initAudio() {
     if (this.audio) return;
     this.audio = new Audio("/music/romantic.mp3");
-    this.audio.loop = false; // Manually loop to second 6
+    this.audio.loop = false; // Manually loop to second 12
     this.audio.preload = "auto";
     this.audio.volume = 0;
 
-    // Set seek position to second 6 as soon as metadata is ready
+    // Set seek position to second 12 as soon as metadata is ready
     this.audio.addEventListener("loadedmetadata", () => {
       if (this.audio && this.audio.currentTime < this.startTimeSeconds - 0.2) {
         this.audio.currentTime = this.startTimeSeconds;
       }
     });
 
-    // When the audio finishes, loop back to second 6 seamlessly
+    // When the audio finishes, loop back to second 12 seamlessly
     this.audio.addEventListener("ended", () => {
       if (this.audio) {
         this.audio.currentTime = this.startTimeSeconds;
-        this.audio.play().catch(() => {});
+        this.audio.play().catch(() => { });
       }
     });
 
@@ -75,7 +75,7 @@ class RomanticAudioManager {
     this.initAudio();
     if (!this.audio) return false;
 
-    // Skip the first 5 seconds, jump directly to second 6
+    // Skip the beginning, jump directly to second 12
     if (this.audio.currentTime < this.startTimeSeconds - 0.2) {
       this.audio.currentTime = this.startTimeSeconds;
     }
@@ -125,19 +125,35 @@ class RomanticAudioManager {
     this.play().then((success) => {
       if (!success) {
         // Fallback: If browser policy blocks autoplay with zero interaction,
-        // start playback from second 6 on the very first touch/click anywhere on the screen
+        // trigger playback on the earliest possible user action (touch, click, scroll, key, focus)
+        const events = [
+          "pointerdown",
+          "pointerup",
+          "touchstart",
+          "touchend",
+          "mousedown",
+          "click",
+          "keydown",
+          "wheel",
+          "scroll",
+          "focus"
+        ];
+
         const onFirstInteraction = () => {
-          this.play();
-          window.removeEventListener("pointerdown", onFirstInteraction);
-          window.removeEventListener("touchstart", onFirstInteraction);
-          window.removeEventListener("click", onFirstInteraction);
-          window.removeEventListener("keydown", onFirstInteraction);
+          this.play().then((ok) => {
+            if (ok) {
+              events.forEach((evt) => {
+                window.removeEventListener(evt, onFirstInteraction);
+                document.removeEventListener(evt, onFirstInteraction);
+              });
+            }
+          });
         };
 
-        window.addEventListener("pointerdown", onFirstInteraction, { once: true, passive: true });
-        window.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true });
-        window.addEventListener("click", onFirstInteraction, { once: true, passive: true });
-        window.addEventListener("keydown", onFirstInteraction, { once: true, passive: true });
+        events.forEach((evt) => {
+          window.addEventListener(evt, onFirstInteraction, { passive: true });
+          document.addEventListener(evt, onFirstInteraction, { passive: true });
+        });
       }
     });
   }

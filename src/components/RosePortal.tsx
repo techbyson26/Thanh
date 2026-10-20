@@ -105,11 +105,13 @@ export default function RosePortal({ onBloomComplete }: RosePortalProps) {
             strokeLinecap="round"
           />
           <path
+            className={styles.leafRight}
             d="M 150 240 Q 185 230 195 245 Q 170 260 150 252"
             fill="#32732a"
             opacity="0.9"
           />
           <path
+            className={styles.leafLeft}
             d="M 148 250 Q 115 242 105 258 Q 130 270 148 260"
             fill="#295d23"
             opacity="0.9"
@@ -175,10 +177,12 @@ export default function RosePortal({ onBloomComplete }: RosePortalProps) {
           />
 
           {/* Golden Pollen Sparkles */}
-          <circle cx="145" cy="148" r="3" fill="url(#goldHeartGlow)" />
-          <circle cx="155" cy="146" r="2.5" fill="url(#goldHeartGlow)" />
-          <circle cx="152" cy="156" r="3.2" fill="url(#goldHeartGlow)" />
-          <circle cx="143" cy="155" r="2" fill="url(#goldHeartGlow)" />
+          <g className={styles.pollenSparkles}>
+            <circle cx="145" cy="148" r="3" fill="url(#goldHeartGlow)" />
+            <circle cx="155" cy="146" r="2.5" fill="url(#goldHeartGlow)" />
+            <circle cx="152" cy="156" r="3.2" fill="url(#goldHeartGlow)" />
+            <circle cx="143" cy="155" r="2" fill="url(#goldHeartGlow)" />
+          </g>
         </svg>
       </button>
 

@@ -17,37 +17,37 @@ interface WishCardItem {
 const WISHES_DATA: WishCardItem[] = [
   {
     id: "radiance",
-    tag: "Nhan Sắc & Tâm Hồn",
-    title: "Nụ Cười Rạng Rỡ, Nắng Ấm",
+    tag: "Nhan Sắc & Nụ Cười",
+    title: "Rạng Rỡ & Xinh Tươi",
     message:
-      "Chúc bạn dù qua bao thăng trầm của thời gian, đôi mắt vẫn giữ trọn nét hồn nhiên trong trẻo, nụ cười vẫn sáng bừng tựa nắng sớm mùa thu. Vẻ đẹp của bạn tỏa sáng từ tâm hồn dịu dàng, nhân hậu và sự kiên cường đáng trân quý.",
+      "Chúc em luôn giữ trọn nét hồn nhiên, đôi mắt sáng và nụ cười rạng ngời như ánh nắng sớm ban mai. Mong cô em gái nhỏ lúc nào cũng tươi tắn, yêu đời và tự tin tỏa sáng với vẻ duyên dáng rất riêng!",
     icon: <Smile size={24} color="#ff7597" />,
     glowColor: "rgba(255, 67, 113, 0.4)",
   },
   {
     id: "peace",
-    tag: "Bình Yên & Thư Thái",
-    title: "Một Đời An Yên, Tự Tại",
+    tag: "Bình Yên & Niềm Vui",
+    title: "Mỗi Ngày Đều An Nhiên",
     message:
-      "Mong cuộc đời đối đãi với bạn bằng tất cả sự dịu dàng. Chúc bạn có những sớm mai thảnh thơi thưởng trà ngắm hoa, những chiều hoàng hôn an lành bên người thương, và đêm về luôn có những giấc ngủ say nồng, trút bỏ hết muôn nỗi mệt nhoài.",
+      "Mong cuộc sống luôn đối đãi với em thật dịu dàng. Chúc Thanh có những sớm mai thảnh thơi, ăn những món ngon em thích, ghé những nơi em mơ và tối về luôn có những giấc ngủ thật say nồng, trút bỏ mọi âu lo.",
     icon: <Sun size={24} color="#f6c86a" />,
     glowColor: "rgba(246, 200, 106, 0.4)",
   },
   {
     id: "confidence",
-    tag: "Bản Lĩnh & Tự Do",
-    title: "Vững Tin, Kiêu Hãnh Tỏa Sáng",
+    tag: "Tương Lai & Ước Mơ",
+    title: "Bản Lĩnh Chạm Tới Ước Mơ",
     message:
-      "Hãy kiên định bước trên con đường bạn đã chọn và kiêu hãnh như đóa hồng kiều diễm: vừa mềm mại dịu dàng, vừa kiên cường bất khuất. Chúc bạn luôn đủ dũng khí theo đuổi đam mê, gặt hái thành công vang dội và sống cuộc đời trọn vẹn của chính mình.",
+      "Hãy kiên định bước trên con đường em đã chọn nhé. Chúc em gái luôn thông minh, dũng cảm theo đuổi đam mê, gặt hái thật nhiều thành tích và sớm chạm tới mọi ước mơ mà em hằng ấp ủ!",
     icon: <Compass size={24} color="#ff9ebb" />,
     glowColor: "rgba(255, 158, 187, 0.4)",
   },
   {
     id: "love",
-    tag: "Hạnh Phúc & Yêu Thương",
-    title: "Trọn Vẹn Yêu Thương, Nâng Niu",
+    tag: "Gia Đình & Điểm Tựa",
+    title: "Hậu Phương Luôn Bên Em",
     message:
-      "Phụ nữ dù mạnh mẽ đến đâu cũng xứng đáng có một chốn bình yên để tựa vào. Chúc bạn luôn tìm thấy một bờ vai vững chãi chở che những khi mỏi mệt, có người sẵn lòng lắng nghe mọi nỗi niềm chưa kể và trân trọng bạn như báu vật vô giá nhất.",
+      "Dù ngoài kia có áp lực hay thử thách thế nào, hãy nhớ rằng gia đình và anh luôn là bến đỗ bình yên nhất. Với cả nhà, Thanh mãi là cô em gái quý giá và được thương yêu vô điều kiện.",
     icon: <HeartHandshake size={24} color="#ffd166" />,
     glowColor: "rgba(255, 209, 102, 0.4)",
   },
@@ -75,9 +75,9 @@ export default function WishCards() {
           <Sparkles size={14} color="#ff9ebb" />
           <span>Vườn Hoa Yêu Thương</span>
         </div>
-        <h2 className={styles.sectionTitle}>Những Lời Chúc Ngọt Ngào Nhất</h2>
+        <h2 className={styles.sectionTitle}>Những Lời Chúc Ngọt Ngào Dành Cho Em</h2>
         <p className={styles.sectionDesc}>
-          Mỗi thông điệp là một đóa hoa thơm ngát được gửi gắm bằng tất cả sự chân thành và trân quý.
+          Mỗi đóa hoa là một lời chúc chân thành nhất mà anh muốn gửi tặng cô em gái nhỏ.
         </p>
       </div>
 
@@ -105,7 +105,7 @@ export default function WishCards() {
                 className={styles.sendFlowerBtn}
                 onClick={(e) => handleSendFlowerToCard(item.id, e)}
               >
-                <span>💐 Tặng đóa hoa này</span>
+                <span>💐 Tặng hoa cho em</span>
               </button>
 
               <span className={styles.countText}>

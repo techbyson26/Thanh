@@ -11,7 +11,7 @@ interface PersonalizeModalProps {
   onClose: () => void;
 }
 
-const QUICK_NAMES = ["Mẹ Yêu", "Vợ Yêu", "Em Yêu", "Chị Gái", "Bạn Thân", "Người Thương"];
+const QUICK_NAMES = ["Thanh", "Bé Thanh", "Em Thanh", "Cô Em Gái Nhỏ", "Em Gái Cưng"];
 
 export default function PersonalizeModal({
   currentName,
@@ -54,7 +54,7 @@ export default function PersonalizeModal({
         <div className={styles.modalHeader}>
           <h3 className={styles.modalTitle}>Cá Nhân Hóa Lời Chúc</h3>
           <p className={styles.modalDesc}>
-            Nhập tên người nhận để tạo đường dẫn thiệp chúc mừng riêng biệt gửi tặng
+            Nhập tên để tạo đường dẫn thiệp chúc mừng riêng biệt gửi tặng em gái
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function PersonalizeModal({
           <input
             type="text"
             className={styles.textInput}
-            placeholder="Ví dụ: Mẹ Yêu, Vợ Yêu, Hà My, Phương Thảo..."
+            placeholder="Ví dụ: Thanh, Bé Thanh, Em Gái Nhỏ..."
             value={nameInput}
             onChange={handleInputChange}
             maxLength={35}
@@ -89,7 +89,7 @@ export default function PersonalizeModal({
         <div className={styles.previewBox}>
           <div>🌸 Tiêu đề bức thư sẽ hiển thị:</div>
           <div className={styles.previewText}>
-            &ldquo;Thân gửi {nameInput.trim() || "Người Phụ Nữ Tuyệt Vời"}...&rdquo;
+            &ldquo;Gửi {nameInput.trim() || "Thanh"} – cô em gái nhỏ của anh...&rdquo;
           </div>
         </div>
 

@@ -13,7 +13,9 @@ export default function EnvelopeLetter({ recipientName }: EnvelopeLetterProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [likes, setLikes] = useState(0);
 
-  const displayName = recipientName?.trim() || "Người Phụ Nữ Tuyệt Vời";
+  const displayName = recipientName?.trim() || "Thanh";
+  const isPrefixPresent = /^(em|bé|cô)/i.test(displayName);
+  const letterTag = isPrefixPresent ? displayName : `em ${displayName}`;
 
   const handleToggleEnvelope = () => {
     if (!isOpen) {
@@ -55,18 +57,18 @@ export default function EnvelopeLetter({ recipientName }: EnvelopeLetterProps) {
             <div className={styles.waxSeal}>
               <div className={styles.sealInnerRing}>
                 <span className={styles.sealDate}>20/10</span>
-                <span className={styles.sealText}>Yêu Thương</span>
+                <span className={styles.sealText}>Thanh Yêu</span>
               </div>
             </div>
 
             <div className={styles.envelopeHint}>
               <Mail size={18} color="#f6c86a" />
-              <span>Một bức thư riêng dành gửi đến <strong>{displayName}</strong></span>
+              <span>Bức thư riêng gửi tặng <strong>{letterTag}</strong> 💌</span>
               <Sparkles size={16} color="#ff7597" />
             </div>
 
             <div className={styles.envelopeSub}>
-              (Nhấn vào phong thư để mở ra điều bất ngờ ✨)
+              (Nhấn vào phong thư để đọc những lời tâm sự chân thành nhất ✨)
             </div>
           </div>
         ) : (
@@ -74,45 +76,49 @@ export default function EnvelopeLetter({ recipientName }: EnvelopeLetterProps) {
           <div className={styles.letterPaper}>
             <div className={styles.paperHeader}>
               <h2 className={styles.paperGreeting}>
-                Thân gửi {displayName},
+                Gửi {displayName} – cô em gái nhỏ của anh,
               </h2>
               <span className={styles.paperBadge}>20/10/2026</span>
             </div>
 
             <div className={styles.letterBody}>
               <p>
-                Có một câu nói rất đẹp: <em>&ldquo;Thượng đế tạo ra phụ nữ không phải để họ gánh vác cả thế giới, mà để thế giới này được sưởi ấm bởi sự dịu dàng và lòng bao dung của họ.&rdquo;</em>
+                Nhân ngày 20/10, anh viết mấy dòng này gửi tặng cô em gái nhỏ – người lúc nào cũng mang lại tiếng cười, sự ấm áp và nguồn năng lượng tích cực cho cả nhà.
               </p>
 
               <p>
-                Cảm ơn bạn vì đã luôn kiên cường đi qua những ngày giông bão, luôn giữ trọn tấm lòng lương thiện và nụ cười ấm áp dù cuộc sống có đôi lần không như ý. Sự hiện diện của bạn chính là món quà vô giá, là niềm an ủi và là ánh sáng tuyệt vời thắp lên hy vọng cho những người xung quanh.
+                Thời gian trôi nhanh thật, mới ngày nào em còn bé xíu hay líu lo chạy theo anh, vậy mà giờ đã là một cô gái duyên dáng, hiểu chuyện và ngày càng tự lập. Nhìn em khôn lớn từng ngày, anh thấy vui và tự hào về em nhiều lắm.
               </p>
 
               <div className={styles.letterPoem}>
-                &ldquo;Mong bạn một đời không bão tố giăng đầy,<br />
-                Được che chở khi mỏi mệt, được ôm lấy khi yếu lòng.<br />
-                Mong ánh mắt bạn luôn trong veo qua năm tháng,<br />
-                Và trái tim mãi vẹn nguyên những ngọt ngào dịu êm.&rdquo;
+                &ldquo;Mong em một đời bình an, nhiều may mắn,<br />
+                Nụ cười luôn trong trẻo tựa ánh ban mai.<br />
+                Dù đường đời dẫu có lắm chông gai,<br />
+                Hãy luôn nhớ: Phía sau em luôn có gia đình!&rdquo;
               </div>
 
               <p>
-                Nhân ngày Phụ nữ Việt Nam 20/10, mong bạn hãy yêu thương bản thân mình nhiều hơn một chút: bớt đi những nghĩ suy lo toan, dành cho mình những giây phút thảnh thơi, chọn chiếc váy mình thích, thưởng thức món ăn mình yêu và kiêu hãnh sống trọn vẹn từng khoảnh khắc thanh xuân rực rỡ nhất.
+                20/10 năm nay, chúc Thanh luôn giữ trọn nụ cười rạng rỡ trên môi, mỗi ngày mới đều có thật nhiều niềm vui. Chúc em học tập và công việc thật suôn sẻ, tự tin đạt được những mục tiêu mà em hằng ấp ủ. Nhớ là đừng bao giờ tạo quá nhiều áp lực cho bản thân nhé; hãy luôn ăn ngon miệng, ngủ đủ giấc, thích chiếc váy nào thì cứ tự tin diện, và yêu thương bản thân mình thật nhiều!
+              </p>
+
+              <p>
+                Dù sau này em có khôn lớn, đi xa đến đâu, thì trong mắt anh và gia đình, em vẫn mãi là cô em gái nhỏ được cưng chiều, nâng niu và luôn có một chốn bình yên để trở về bất cứ lúc nào thấy mỏi mệt.
               </p>
 
               <p style={{ marginTop: "14px", fontWeight: 600, color: "#930d37" }}>
-                Chúc mừng ngày 20/10! Chúc bạn mãi là đóa hoa thơm ngát, độc bản và rạng rỡ nhất theo cách của riêng mình! ✨
+                Chúc mừng ngày 20/10 em gái nhé! Chúc em luôn tự tin, xinh đẹp và ngập tràn hạnh phúc! 🌸✨
               </p>
             </div>
 
             <div className={styles.letterSignature}>
-              <div className={styles.signRole}>Gửi trọn ngàn lời chúc từ trái tim,</div>
-              <div className={styles.signName}>Thương gửi & Trân quý 💖</div>
+              <div className={styles.signRole}>Người luôn đồng hành và ủng hộ em,</div>
+              <div className={styles.signName}>Anh thương gửi em Thanh 💕</div>
             </div>
 
             <div className={styles.letterActions}>
               <button className={styles.heartBtn} onClick={handleHeartClick}>
                 <Heart size={16} fill="#fff" />
-                <span>Thả tim yêu thương {likes > 0 && `(${likes})`}</span>
+                <span>Thả tim cho em gái {likes > 0 && `(${likes})`}</span>
               </button>
 
               <button

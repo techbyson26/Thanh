@@ -16,7 +16,7 @@ import { romanticAudio } from "@/utils/audioPlayer";
 function MainContent() {
   const searchParams = useSearchParams();
   const [isBloomed, setIsBloomed] = useState(false);
-  const [recipientName, setRecipientName] = useState("");
+  const [recipientName, setRecipientName] = useState("Thanh");
   const [isPersonalizeOpen, setIsPersonalizeOpen] = useState(false);
 
   useEffect(() => {
@@ -88,20 +88,13 @@ function MainContent() {
 
               <h1 className={styles.heroTitle}>
                 <span className="text-rose-gradient">Chúc Mừng Ngày 20/10</span>
-                {recipientName ? (
-                  <span className={styles.recipientHighlight}>
-                    Gửi Đến {recipientName} ✨
-                  </span>
-                ) : (
-                  <span className={styles.recipientHighlight}>
-                    Gửi Trọn Yêu Thương 🌸
-                  </span>
-                )}
+                <span className={styles.recipientHighlight}>
+                  {recipientName ? `Thương Gửi Em ${recipientName} ✨` : "Gửi Tặng Em Gái Nhỏ 🌸"}
+                </span>
               </h1>
 
               <p className={styles.heroSubtitle}>
-                Thế giới có muôn ngàn sắc hoa, nhưng người phụ nữ chính là đóa hoa thơm ngát và kiều diễm nhất.
-                Cảm ơn bạn vì đã luôn mang đến dịu dàng, ấm áp và nguồn cảm hứng tuyệt vời cho cuộc đời này.
+                Gửi cô em gái nhỏ của anh! Chúc Thanh có một ngày 20/10 thật vui vẻ, lúc nào cũng cười tươi như hoa và luôn hạnh phúc, bình yên với những gì em đang theo đuổi.
               </p>
             </section>
 
@@ -113,7 +106,7 @@ function MainContent() {
               <button
                 className={styles.burstFlowersCta}
                 onClick={handleBurstMoreFlowers}
-                title="Bấm để bung tỏa thêm muôn ngàn cánh hoa trên màn hình"
+                title="Bấm để bung tỏa thêm muôn ngàn cánh hoa"
               >
                 <Flower2 size={18} className={styles.ctaIcon} color="#fff" />
                 <span className={styles.ctaText}>Bung Tỏa Thêm Ngàn Cánh Hoa 💐</span>
@@ -127,10 +120,10 @@ function MainContent() {
             {/* Romantic Footer */}
             <footer className={styles.footer}>
               <p>
-                Phụ nữ sinh ra là để được nâng niu, trân quý và sống một đời tự do kiêu hãnh.
+                Em gái sinh ra là để được yêu thương, chiều chuộng và sống thật rực rỡ.
               </p>
               <p style={{ marginTop: "6px" }}>
-                Gửi trọn lòng biết ơn và yêu thương <Heart size={14} className={styles.footerHeart} fill="#ff4371" /> 20/10/2026
+                Cả nhà luôn ở bên và tự hào về em gái nhỏ <Heart size={14} className={styles.footerHeart} fill="#ff4371" /> 20/10/2026
               </p>
               <button
                 className={styles.replayBtn}

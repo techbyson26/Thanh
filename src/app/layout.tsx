@@ -24,12 +24,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌸 - Yêu Thương & Rạng Ngời",
-  description: "Trang web thiệp hoa chúc mừng 20/10 ấm áp, lãng mạn với hoa nở diệu kỳ và muôn vàn lời chúc ý nghĩa.",
-  keywords: ["20/10", "chúc mừng 20/10", "ngày phụ nữ việt nam", "thiệp 20/10", "lời chúc 20/10"],
+  title: "Chúc Mừng 20/10 Em Gái 🌸 - Thương Gửi Thanh",
+  description: "Món quà thiệp hoa và những lời chúc yêu thương nhất gửi tặng cô em gái nhỏ tên Thanh nhân ngày 20/10.",
+  keywords: ["20/10", "chúc mừng 20/10", "em gái", "Thanh", "thiệp 20/10 tặng em gái"],
   openGraph: {
-    title: "Chúc Mừng 20/10 - Gửi Ngàn Yêu Thương 💐",
-    description: "Nhấn vào đóa hoa để mở bức thư tình yêu và đón nhận cơn mưa hoa rực rỡ!",
+    title: "Chúc Mừng 20/10 - Thương Gửi Em Thanh 💐",
+    description: "Chạm vào đóa hoa để mở bức thư yêu thương và cơn mưa hoa rực rỡ dành riêng cho cô em gái nhỏ!",
     type: "website",
   },
 };

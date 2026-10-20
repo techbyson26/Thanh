@@ -7,9 +7,9 @@
 class RomanticAudioManager {
   private audio: HTMLAudioElement | null = null;
   private isPlaying: boolean = false;
-  private targetVolume: number = 1;
+  private targetVolume: number = 1.333;
   private fadeInterval: NodeJS.Timeout | null = null;
-  private startTimeSeconds: number = 25;
+  private startTimeSeconds: number = 35;
 
   constructor() {
     if (typeof window !== "undefined") {

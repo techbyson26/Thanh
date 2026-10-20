@@ -76,7 +76,7 @@ export default function EnvelopeLetter({ recipientName }: EnvelopeLetterProps) {
           <div className={styles.letterPaper}>
             <div className={styles.paperHeader}>
               <h2 className={styles.paperGreeting}>
-                Gửi {displayName} – cô em gái nhỏ của anh,
+                Gửi {displayName} – cô em gái nhỏ của anh!
               </h2>
               <span className={styles.paperBadge}>20/10/2026</span>
             </div>
@@ -112,7 +112,7 @@ export default function EnvelopeLetter({ recipientName }: EnvelopeLetterProps) {
 
             <div className={styles.letterSignature}>
               <div className={styles.signRole}>Người luôn đồng hành và ủng hộ em,</div>
-              <div className={styles.signName}>Anh thương gửi em Thanh 💕</div>
+              <div className={styles.signName}>Anh trai 💕</div>
             </div>
 
             <div className={styles.letterActions}>

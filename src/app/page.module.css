@@ -174,7 +174,8 @@
   .heroBadge {
     font-size: 12px;
     padding: 6px 14px;
-    white-space: nowrap;
+    max-width: calc(100vw - 32px);
+    text-align: center;
   }
   .burstFlowersCta {
     font-size: 13.5px;
@@ -187,6 +188,7 @@
   .heroBadge {
     font-size: 11px;
     padding: 5px 10px;
+    gap: 5px;
   }
   .burstFlowersCta {
     font-size: 12px;
